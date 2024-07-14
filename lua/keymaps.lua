@@ -32,3 +32,7 @@ vim.keymap.set('n', '<C-Right>', ':vertical resize +2<CR>', opts)
 vim.keymap.set('v', '<', '<gv', opts)
 vim.keymap.set('v', '>', '>gv', opts)
 
+-- Nvim-tree 
+vim.keymap.set("n", "<space>w", ":NvimTreeToggle<CR>", opt)
+
+vim.g.mapleader = ' '
