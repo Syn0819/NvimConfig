@@ -36,3 +36,5 @@ vim.keymap.set('v', '>', '>gv', opts)
 vim.keymap.set("n", "<space>w", ":NvimTreeToggle<CR>", opt)
 
 vim.g.mapleader = ' '
+
+vim.keymap.set("n", "<leader>h", "<cmd>CppswitchSwitch<CR>")

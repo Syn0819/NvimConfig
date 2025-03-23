@@ -16,6 +16,7 @@ require("lazy").setup(
 {
     -- theme: monokai
 	"tanvirtin/monokai.nvim",
+    "sainnhe/everforest",
     -- Vscode-like pictograms
 	{
 		"onsails/lspkind.nvim",
@@ -87,5 +88,24 @@ require("lazy").setup(
         end)
     end,
   },
+  -- lualine
+  {
+    'nvim-lualine/lualine.nvim',
+    dependencies = { 'nvim-tree/nvim-web-devicons' }
+  },
+  -- cpp-switcher
+  {
+    "christerso/cpp-switcher",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    config = function()
+      require("cpp-switcher").setup({
+        header_ext = { "h", "hpp" },    -- 头文件扩展名
+        source_ext = { "cpp", "c" },    -- 源文件扩展名
+        header_dirs = { "include" },    -- 头文件搜索目录
+        source_dirs = { "src" },        -- 源文件搜索目录
+        search_depth = 5                -- 最大搜索层级
+      })
+    end
+  }, 
 })
 
