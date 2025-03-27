@@ -101,5 +101,9 @@ require("lazy").setup(
         { "<leader>h", ":call CurtineIncSw()<CR>", desc = "Switch Between Header And Src" },
     },
   },
+  -- gitsigns
+  {
+    "lewis6991/gitsigns.nvim",
+  },
 })
 
