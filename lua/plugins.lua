@@ -17,6 +17,7 @@ require("lazy").setup(
     -- theme: monokai
 	"tanvirtin/monokai.nvim",
     "sainnhe/everforest",
+    "morhetz/gruvbox",
     -- Vscode-like pictograms
 	{
 		"onsails/lspkind.nvim",
@@ -104,6 +105,26 @@ require("lazy").setup(
   -- gitsigns
   {
     "lewis6991/gitsigns.nvim",
+  },
+  -- 语法高亮
+  {
+    "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate",
+    config = function () 
+      local configs = require("nvim-treesitter.configs")
+
+      configs.setup({
+          ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "elixir", "heex", "javascript", "html" },
+          sync_install = false,
+          highlight = { enable = true },
+          indent = { enable = true },  
+        })
+    end  
+  },
+  -- 终端显示
+  {
+    -- amongst your other plugins
+    {'akinsho/toggleterm.nvim', verison = "*", config = true}
   },
 })
 

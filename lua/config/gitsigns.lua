@@ -110,5 +110,7 @@ require('gitsigns').setup {
 
     -- Text object
     map({'o', 'x'}, 'ih', gitsigns.select_hunk)
+
+    map('n', '<leader>gb', gitsigns.blame, {desc = 'Git blame'})
   end
 }
